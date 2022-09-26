@@ -1,1 +1,1 @@
-web: gunicorn "app:createapp()"
+web: gunicorn "app:create_app()"
