@@ -1,0 +1,18 @@
+{% extends './partials/layout.html' %}
+
+{% block content %}
+<div class="card">
+    <div class="card-header">
+        <h3> {{ pokeentry['name'] }}</h3>
+    </div>
+    <div class="card-body">
+        Description: {{ pokeentry['description'] }}
+    </div>
+    <div class="card-body">
+        Typing: {{ pokeentry['typing'] }}
+    </div>
+    <div class="card-body">
+        Owner: {{ user['username'] }}
+    </div>
+</div>
+{% endblock content %}

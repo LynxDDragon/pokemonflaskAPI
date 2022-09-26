@@ -1,0 +1,32 @@
+{% extends './partials/layout.html' %}
+
+{% block content %}
+<h1>Pokemon</h1>
+<p>Welcome {{ user['first_name'] }} {{ user['last_name'] }}.</p>
+
+<h2>Add a Pokemon</h2>
+<form action="{{ url_for('main.create_pokemon') }}" method="POST" class="my-2">
+    <div class="form-group">
+        <label for="name">name</label>
+        <input type="text" class="form-control" id="name" name="name">
+    </div>
+    <div class="form-group">
+        <label for="description">Description</label>
+        <input type="text" class="form-control" id="description" name="description">
+    </div>
+    <div class="form-group">
+        <label for="type">Type</label>
+        <input type="text" class="form-control" id="type" name="type">
+    </div>
+    <button type="submit" class="btn w-25" style="background-color: #767d92;">Add Pokemon</button>
+</form>
+
+
+{% for poke in pokes %}
+<div class="card p-3 m-5" style="background-color: #081b33;">
+    <h3>{{ poke['name'] }}</h3>
+    <a type="button" class="btn my-2" style="background-color: #767d92;" href="{{ url_for('main.pokeentry', id=poke['id']) }}">Pokedex</a>
+    <a type="button" class="btn my-2" style="background-color: #767d92;" action="{{ url_for('main.catchpoke') }}">Catch</a>
+</div>
+{% endfor %}
+{% endblock content %}
