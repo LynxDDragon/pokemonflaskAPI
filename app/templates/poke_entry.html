@@ -1,18 +1,18 @@
 {% extends './partials/layout.html' %}
 
 {% block content %}
-<div class="card">
-    <div class="card-header">
-        <h3> {{ pokeentry['name'] }}</h3>
+<div class="card p-3 m-5" style="background-color: #081b33; border-radius: 25px;">
+    <div class="card-header border-bottom border-dark">
+        <h2> {{ pokeentry['name'] }}</h2>
     </div>
     <div class="card-body">
-        Description: {{ pokeentry['description'] }}
+        <h5>Description: {{ pokeentry['description'] }}</h5>
     </div>
     <div class="card-body">
-        Typing: {{ pokeentry['typing'] }}
+        <h5>Typing: {{ pokeentry['typing'] }}</h5>
     </div>
     <div class="card-body">
-        Owner: {{ user['username'] }}
+       <h5>Owner: {{ user['username'] }}</h5>
     </div>
 </div>
 {% endblock content %}

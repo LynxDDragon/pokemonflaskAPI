@@ -10,7 +10,7 @@
     {% endfor %}
 
     {% for poke in pokes %}
-    <div class="card p-3 m-5" style="background-color: #081b33;">
+    <div class="card p-3 m-5" style="background-color: #081b33; border-radius: 25px;">
         <h3>{{ poke['name'] }}</h3>
         <a type="button" class="btn my-2" style="background-color: #767d92;" href="{{ url_for('main.pokeentry', id=poke['id']) }}">Pokedex</a>
     </div>
